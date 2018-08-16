@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'mobx-react';
 
-class App extends Component {
+import './App.css';
+import Router from './router.jsx';
+import stores from './stores';
+
+export default class App extends Component {
   render() {
     return (
-      <Routes />
+      <Provider {...stores}>
+        <Router />
+      </Provider>
     );
   }
 }
-
-export default App;
