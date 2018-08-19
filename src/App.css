@@ -1,1 +1,16 @@
 @import '~antd/dist/antd.css';
+
+.main {
+  display: flex;
+}
+
+.main .content {
+  max-width: 960px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.main .footer {
+  display: flex;
+}

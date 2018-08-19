@@ -3,6 +3,8 @@ import { observer, inject } from 'mobx-react';
 
 import Header from './header';
 import Foot from './foot';
+import { Layout as AntLayout } from 'antd';
+const { Content } = AntLayout;
 
 @observer
 export default class Layout extends Component {
@@ -12,10 +14,20 @@ export default class Layout extends Component {
 
   render() {
     return (
-      <div>
+      <div class="main">
         <Header />
-        <div>{this.props.children}</div>
-        <Foot />
+        <Content
+          className="content"
+          style={{
+            margin: '24px 16px',
+            padding: 24,
+            background: '#fff',
+            minHeight: 280
+          }}
+        >
+          <AntLayout>{this.props.children}</AntLayout>
+        </Content>
+        <Foot className="footer" />
       </div>
     );
   }

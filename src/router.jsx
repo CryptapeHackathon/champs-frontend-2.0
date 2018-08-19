@@ -12,6 +12,7 @@ import Layout from './layout';
 
 // pages
 import Index from './pages/index';
+import Hackathons from './pages/hackathons/hackathons';
 
 const Main = withRouter(props => <Layout {...props} />);
 
@@ -25,6 +26,7 @@ class Router extends Component {
       <BrowserRouter>
         <Main>
           <Switch>
+            <Route path="/hackathons" component={Hackathons} />
             <Route path="/" component={Index} />
           </Switch>
         </Main>
