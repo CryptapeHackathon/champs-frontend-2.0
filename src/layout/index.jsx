@@ -14,7 +14,7 @@ export default class Layout extends Component {
 
   render() {
     return (
-      <div class="main">
+      <div className="main">
         <Header />
         <Content
           className="content"

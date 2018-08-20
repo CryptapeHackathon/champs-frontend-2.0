@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 import axios from 'axios';
 
 class HackathonStore {
@@ -6,7 +6,7 @@ class HackathonStore {
   hackathons = [];
 
   @action
-  async init() {
+  init() {
     axios
       .get(
         'https://easy-mock.com/mock/5b790998de86980870733436/example/hackathons'
@@ -14,8 +14,9 @@ class HackathonStore {
       .then(response => {
         let currentHackathons = response.data.data.hackathons;
         this.hackathons = currentHackathons;
-        console.log('hackathon store updated.');
         console.log('Number of current hackathons: ' + this.hackathons.length);
+        console.log('current hackathons ', this.hackathons);
+        console.log('hackathon store updated.');
       });
   }
 }
